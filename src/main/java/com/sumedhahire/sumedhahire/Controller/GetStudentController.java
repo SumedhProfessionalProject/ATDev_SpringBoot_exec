@@ -42,6 +42,8 @@ public class GetStudentController {
     @PostMapping("/update/{id}")
     public ResponseEntity<String> up(@PathVariable("id") Integer id,@RequestBody Student student){
         try{
+
+            student.setId(id);
             service.update(student);
             return new ResponseEntity<>("Done", HttpStatus.OK);
         }catch (Exception ex){
