@@ -51,9 +51,9 @@ public class GetStudentController {
 
     @PostMapping("/create")
     public Student create(@RequestBody Student student){
-        if(student.getGender().equals("Male"))
+        if(student.getGender().equals(Gender.Male))
             student.setGender(Gender.Male);
-        else if (student.getGender().equals("Female")) {
+        else if (student.getGender().equals(Gender.Female)) {
             student.setGender(Gender.Female);
         }else{
             throw new RuntimeException("Gender not valid");

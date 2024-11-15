@@ -1,10 +1,7 @@
 package com.sumedhahire.sumedhahire.POJO;
 
 import com.sumedhahire.sumedhahire.Enums.Gender;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
 
@@ -22,7 +19,7 @@ public class Student {
 
     private Integer age;
 
-    @T
+    @Enumerated(EnumType.STRING)
     private Gender gender;
 
     private Integer std;

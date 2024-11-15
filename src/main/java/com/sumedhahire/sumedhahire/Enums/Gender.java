@@ -1,13 +1,13 @@
 package com.sumedhahire.sumedhahire.Enums;
 
-public enum Gender {
-    Male {
-        public String toString(){
-            return "Male";
-        }
-    },Female{
-        public String toString(){
-            return "Female";
-        }
+
+import java.io.Serializable;
+
+public enum Gender  implements Serializable {
+    Male,Female;
+
+    public String getGender() {
+        return this.name();
     }
+
 }
