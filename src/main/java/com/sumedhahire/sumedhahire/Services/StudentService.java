@@ -27,14 +27,14 @@ public class StudentService {
 
     //update
     public Student update(Student student){
-        if(studentRepo.findById(student.getId()).isEmpty())
-            throw new StudentNotFoundException("Student not found");
+        studentRepo.findById(student.getId()).orElseThrow(()->new StudentNotFoundException("Student not found"));
         studentRepo.save(student);
         return student;
     }
 
     //delete
     public void del(Integer id){
+        studentRepo.findById(id).orElseThrow(()->new StudentNotFoundException("Student not found"));
         studentRepo.deleteById(id);
     }
 

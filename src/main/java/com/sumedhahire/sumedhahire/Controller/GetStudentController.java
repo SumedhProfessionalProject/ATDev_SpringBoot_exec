@@ -33,10 +33,10 @@ public class GetStudentController {
     public ResponseEntity<String> del(@PathVariable("id") Integer id){
         try{
             service.del(id);
-            return new ResponseEntity<>("Done", HttpStatus.OK);
         }catch (Exception ex){
             return new ResponseEntity<>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
+        return new ResponseEntity<>("Done", HttpStatus.OK);
     }
 
     @PostMapping("/update/{id}")
