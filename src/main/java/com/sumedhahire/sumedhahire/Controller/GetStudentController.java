@@ -15,6 +15,7 @@ public class GetStudentController {
     @Autowired
     private StudentService service;
 
+    //gets by id
     @GetMapping("/get/{id}")
     public ResponseEntity<Object> getById(@PathVariable("id") Integer id){
         try{
@@ -39,6 +40,9 @@ public class GetStudentController {
         return new ResponseEntity<>("Done", HttpStatus.OK);
     }
 
+    /*
+    updates by id if not availabel throws an error
+     */
     @PostMapping("/update/{id}")
     public ResponseEntity<String> up(@PathVariable("id") Integer id,@RequestBody Student student){
         try{
@@ -51,6 +55,9 @@ public class GetStudentController {
         }
     }
 
+    /*
+    creates a student
+     */
     @PostMapping("/create")
     public Student create(@RequestBody Student student){
         if(student.getGender().equals(Gender.Male))
