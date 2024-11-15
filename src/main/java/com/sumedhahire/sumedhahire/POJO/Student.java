@@ -20,8 +20,9 @@ public class Student {
 
     private String name;
 
-    private Date date;
+    private Integer age;
 
+    @T
     private Gender gender;
 
     private Integer std;
